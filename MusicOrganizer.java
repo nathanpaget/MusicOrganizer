@@ -80,13 +80,17 @@ public class MusicOrganizer
     }
     
     public void genRandomPlaylist(){
-        
-        for(Track track : tracks) {
-            randTracks.add(track);
-            
-        }
+        if (randTracks.size()<1)
+        {
+            for(Track track : tracks) {
+                randTracks.add(track);
+            }
         Collections.shuffle(randTracks);
-        
+    }
+    else
+    {
+        System.out.println("Current random playlist still has " + randTracks.size() + " songs left");
+    }
     }
     public void shuffleAll()
     {
